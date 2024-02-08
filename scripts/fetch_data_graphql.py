@@ -25,6 +25,8 @@ query MyQuery {
 }
 ''')
 
+
+
 response = client.execute(query)
 
 
