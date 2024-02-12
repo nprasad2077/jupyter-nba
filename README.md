@@ -16,7 +16,7 @@ This project is dedicated to analyzing NBA data spanning several seasons to deri
 1. Clone the repository:  
 
 ```bash
-git clone https://your-repository-url.com
+git clone [https://your-repository-url.com](https://github.com/nprasad2077/jupyter-nba.git)
 cd jupyter-nba
 ```
 
