@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>team_data_HOU</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>total_points_top_35</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7510,17 +7510,17 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=47dec15d">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=87574ab4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Houston-Rockets">Houston Rockets<a class="anchor-link" href="#Houston-Rockets">¶</a></h1>
+<h1 id="Plot-the-top-35-players-by-total-points-since-the-1992-1993-NBA-Season.">Plot the top 35 players by total points since the 1992-1993 NBA Season.<a class="anchor-link" href="#Plot-the-top-35-players-by-total-points-since-the-1992-1993-NBA-Season.">¶</a></h1>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2de3c2d1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=63594e0f-0235-4dc7-9c3b-6b68e92daed4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7540,18 +7540,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ce8932f8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Find-top-30-players-by-minutes-played-for-the-Houston-Rockets-(NBA).">Find top 30 players by minutes played for the Houston Rockets (NBA).<a class="anchor-link" href="#Find-top-30-players-by-minutes-played-for-the-Houston-Rockets-(NBA).">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=333c2aad">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f2d34871">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7572,16 +7561,14 @@ a.anchor-link {
 
 <span class="c1"># Define Query</span>
 <span class="n">query</span> <span class="o">=</span> <span class="n">gql</span><span class="p">(</span><span class="s1">'''</span>
-<span class="s1">query playerAdvHouston {</span>
-<span class="s1">  playerAdvanced(team: "HOU", ordering: "-minutes_played", limit: 30) {</span>
+<span class="s1">query playerPointTotals {</span>
+<span class="s1">  playerTotalsAll(limit: 35, ordering: "-points") {</span>
 <span class="s1">    playerName</span>
-<span class="s1">    team</span>
 <span class="s1">    position</span>
+<span class="s1">    team</span>
 <span class="s1">    season</span>
-<span class="s1">    games</span>
-<span class="s1">    minutesPlayed</span>
-<span class="s1">    winShares</span>
-<span class="s1">    box</span>
+<span class="s1">    minutesPg</span>
+<span class="s1">    points</span>
 <span class="s1">    id</span>
 <span class="s1">  }</span>
 <span class="s1">}</span>
@@ -7604,13 +7591,13 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'playerAdvanced': [{'playerName': 'Steve Francis', 'team': 'HOU', 'position': 'PG', 'season': 2003, 'games': 81, 'minutesPlayed': 3318, 'winShares': '11.1', 'box': '3.8', 'id': '12550'}, {'playerName': 'Hakeem Olajuwon*', 'team': 'HOU', 'position': 'C', 'season': 1994, 'games': 80, 'minutesPlayed': 3277, 'winShares': '14.3', 'box': '6.8', 'id': '17379'}, {'playerName': 'Hakeem Olajuwon*', 'team': 'HOU', 'position': 'C', 'season': 1993, 'games': 82, 'minutesPlayed': 3242, 'winShares': '15.8', 'box': '7.5', 'id': '17817'}, {'playerName': 'Cuttino Mobley', 'team': 'HOU', 'position': 'SG', 'season': 2004, 'games': 80, 'minutesPlayed': 3229, 'winShares': '7.6', 'box': '1.4', 'id': '12176'}, {'playerName': 'Steve Francis', 'team': 'HOU', 'position': 'PG', 'season': 2001, 'games': 80, 'minutesPlayed': 3194, 'winShares': '12.2', 'box': '5.0', 'id': '13551'}, {'playerName': 'Steve Francis', 'team': 'HOU', 'position': 'PG', 'season': 2004, 'games': 79, 'minutesPlayed': 3194, 'winShares': '7.1', 'box': '1.4', 'id': '12002'}, {'playerName': 'Tracy McGrady*', 'team': 'HOU', 'position': 'SF', 'season': 2005, 'games': 78, 'minutesPlayed': 3182, 'winShares': '12.0', 'box': '6.7', 'id': '11573'}, {'playerName': 'James Harden', 'team': 'HOU', 'position': 'SG', 'season': 2016, 'games': 82, 'minutesPlayed': 3125, 'winShares': '13.3', 'box': '6.6', 'id': '5021'}, {'playerName': 'Jim Jackson', 'team': 'HOU', 'position': 'SF', 'season': 2004, 'games': 80, 'minutesPlayed': 3119, 'winShares': '6.6', 'box': '0.6', 'id': '12073'}, {'playerName': 'Cuttino Mobley', 'team': 'HOU', 'position': 'SG', 'season': 2002, 'games': 74, 'minutesPlayed': 3116, 'winShares': '5.7', 'box': '0.3', 'id': '13204'}, {'playerName': 'Cuttino Mobley', 'team': 'HOU', 'position': 'SG', 'season': 2003, 'games': 73, 'minutesPlayed': 3044, 'winShares': '6.9', 'box': '0.2', 'id': '12703'}, {'playerName': 'Rafer Alston', 'team': 'HOU', 'position': 'PG', 'season': 2007, 'games': 82, 'minutesPlayed': 3040, 'winShares': '6.6', 'box': '0.6', 'id': '10166'}, {'playerName': 'Cuttino Mobley', 'team': 'HOU', 'position': 'SG', 'season': 2001, 'games': 79, 'minutesPlayed': 3002, 'winShares': '8.2', 'box': '0.9', 'id': '13722'}, {'playerName': 'Shane Battier', 'team': 'HOU', 'position': 'SF', 'season': 2007, 'games': 82, 'minutesPlayed': 2988, 'winShares': '9.0', 'box': '2.3', 'id': '10195'}, {'playerName': 'James Harden', 'team': 'HOU', 'position': 'SG', 'season': 2013, 'games': 78, 'minutesPlayed': 2985, 'winShares': '12.8', 'box': '5.6', 'id': '6863'}, {'playerName': 'James Harden', 'team': 'HOU', 'position': 'SG', 'season': 2015, 'games': 81, 'minutesPlayed': 2981, 'winShares': '16.4', 'box': '8.8', 'id': '5645'}, {'playerName': 'James Harden', 'team': 'HOU', 'position': 'PG', 'season': 2017, 'games': 81, 'minutesPlayed': 2947, 'winShares': '15.0', 'box': '8.7', 'id': '4431'}, {'playerName': 'Trevor Ariza', 'team': 'HOU', 'position': 'SF', 'season': 2015, 'games': 82, 'minutesPlayed': 2930, 'winShares': '6.6', 'box': '1.0', 'id': '5418'}, {'playerName': 'Aaron Brooks', 'team': 'HOU', 'position': 'PG', 'season': 2010, 'games': 82, 'minutesPlayed': 2919, 'winShares': '5.5', 'box': '0.7', 'id': '8478'}, {'playerName': 'Otis Thorpe', 'team': 'HOU', 'position': 'PF', 'season': 1994, 'games': 82, 'minutesPlayed': 2909, 'winShares': '9.8', 'box': '0.3', 'id': '17474'}, {'playerName': 'Shane Battier', 'team': 'HOU', 'position': 'SF', 'season': 2008, 'games': 80, 'minutesPlayed': 2907, 'winShares': '8.2', 'box': '2.0', 'id': '9607'}, {'playerName': 'James Harden', 'team': 'HOU', 'position': 'PG', 'season': 2019, 'games': 78, 'minutesPlayed': 2867, 'winShares': '15.2', 'box': '11.0', 'id': '3118'}, {'playerName': 'Trevor Ariza', 'team': 'HOU', 'position': 'SF', 'season': 2016, 'games': 81, 'minutesPlayed': 2859, 'winShares': '5.4', 'box': '0.4', 'id': '4840'}, {'playerName': 'Hakeem Olajuwon*', 'team': 'HOU', 'position': 'C', 'season': 1995, 'games': 72, 'minutesPlayed': 2853, 'winShares': '10.7', 'box': '5.4', 'id': '16895'}, {'playerName': 'Hakeem Olajuwon*', 'team': 'HOU', 'position': 'C', 'season': 1997, 'games': 78, 'minutesPlayed': 2852, 'winShares': '9.1', 'box': '3.5', 'id': '15860'}, {'playerName': 'P.J. Tucker', 'team': 'HOU', 'position': 'PF', 'season': 2019, 'games': 82, 'minutesPlayed': 2802, 'winShares': '5.0', 'box': '-0.6', 'id': '3499'}, {'playerName': 'Hakeem Olajuwon*', 'team': 'HOU', 'position': 'C', 'season': 1996, 'games': 72, 'minutesPlayed': 2797, 'winShares': '9.7', 'box': '4.9', 'id': '16395'}, {'playerName': 'Chandler Parsons', 'team': 'HOU', 'position': 'SF', 'season': 2014, 'games': 74, 'minutesPlayed': 2783, 'winShares': '7.6', 'box': '1.7', 'id': '6485'}, {'playerName': 'James Harden', 'team': 'HOU', 'position': 'SG', 'season': 2014, 'games': 73, 'minutesPlayed': 2777, 'winShares': '12.8', 'box': '5.6', 'id': '6296'}, {'playerName': 'Steve Francis', 'team': 'HOU', 'position': 'PG', 'season': 2000, 'games': 77, 'minutesPlayed': 2776, 'winShares': '6.4', 'box': '2.0', 'id': '14087'}]}
+<pre>{'playerTotalsAll': [{'playerName': 'Kobe Bryant*', 'position': 'SG', 'team': 'LAL', 'season': 2006, 'minutesPg': '3277.0', 'points': 2832, 'id': '10755'}, {'playerName': 'James Harden', 'position': 'PG', 'team': 'HOU', 'season': 2019, 'minutesPg': '2867.0', 'points': 2818, 'id': '3118'}, {'playerName': 'Kevin Durant', 'position': 'SF', 'team': 'OKC', 'season': 2014, 'minutesPg': '3122.0', 'points': 2593, 'id': '6229'}, {'playerName': 'Russell Westbrook', 'position': 'PG', 'team': 'OKC', 'season': 2017, 'minutesPg': '2802.0', 'points': 2558, 'id': '4778'}, {'playerName': 'Michael Jordan*', 'position': 'SG', 'team': 'CHI', 'season': 1993, 'minutesPg': '3067.0', 'points': 2541, 'id': '17728'}, {'playerName': 'Michael Jordan*', 'position': 'SG', 'team': 'CHI', 'season': 1996, 'minutesPg': '3090.0', 'points': 2491, 'id': '16287'}, {'playerName': 'LeBron James', 'position': 'SF', 'team': 'CLE', 'season': 2006, 'minutesPg': '3361.0', 'points': 2478, 'id': '10931'}, {'playerName': 'Kevin Durant', 'position': 'SF', 'team': 'OKC', 'season': 2010, 'minutesPg': '3239.0', 'points': 2472, 'id': '8553'}, {'playerName': 'Kobe Bryant*', 'position': 'SG', 'team': 'LAL', 'season': 2003, 'minutesPg': '3401.0', 'points': 2461, 'id': '12472'}, {'playerName': 'Michael Jordan*', 'position': 'SG', 'team': 'CHI', 'season': 1997, 'minutesPg': '3106.0', 'points': 2431, 'id': '15734'}, {'playerName': 'Kobe Bryant*', 'position': 'SG', 'team': 'LAL', 'season': 2007, 'minutesPg': '3140.0', 'points': 2430, 'id': '10228'}, {'playerName': 'Tracy McGrady*', 'position': 'SG', 'team': 'ORL', 'season': 2003, 'minutesPg': '2954.0', 'points': 2407, 'id': '12688'}, {'playerName': 'Dwyane Wade*', 'position': 'SG', 'team': 'MIA', 'season': 2009, 'minutesPg': '3048.0', 'points': 2386, 'id': '9520'}, {'playerName': 'David Robinson*', 'position': 'C', 'team': 'SAS', 'season': 1994, 'minutesPg': '3241.0', 'points': 2383, 'id': '17422'}, {'playerName': 'Jerry Stackhouse', 'position': 'SG', 'team': 'DET', 'season': 2001, 'minutesPg': '3215.0', 'points': 2380, 'id': '13849'}, {'playerName': 'Allen Iverson*', 'position': 'PG', 'team': 'PHI', 'season': 2006, 'minutesPg': '3103.0', 'points': 2377, 'id': '10917'}, {'playerName': "Shaquille O'Neal*", 'position': 'C', 'team': 'ORL', 'season': 1994, 'minutesPg': '3224.0', 'points': 2377, 'id': '17376'}, {'playerName': 'James Harden', 'position': 'SG', 'team': 'HOU', 'season': 2016, 'minutesPg': '3125.0', 'points': 2376, 'id': '5021'}, {'playerName': 'Stephen Curry', 'position': 'PG', 'team': 'GSW', 'season': 2016, 'minutesPg': '2700.0', 'points': 2375, 'id': '4931'}, {'playerName': 'Michael Jordan*', 'position': 'SG', 'team': 'CHI', 'season': 1998, 'minutesPg': '3181.0', 'points': 2357, 'id': '15171'}, {'playerName': 'James Harden', 'position': 'PG', 'team': 'HOU', 'season': 2017, 'minutesPg': '2947.0', 'points': 2356, 'id': '4431'}, {'playerName': 'Gilbert Arenas', 'position': 'PG', 'team': 'WAS', 'season': 2006, 'minutesPg': '3384.0', 'points': 2346, 'id': '10690'}, {'playerName': "Shaquille O'Neal*", 'position': 'C', 'team': 'LAL', 'season': 2000, 'minutesPg': '3163.0', 'points': 2344, 'id': '14264'}, {'playerName': 'James Harden', 'position': 'SG', 'team': 'HOU', 'season': 2020, 'minutesPg': '2483.0', 'points': 2335, 'id': '2455'}, {'playerName': 'Kobe Bryant*', 'position': 'SG', 'team': 'LAL', 'season': 2008, 'minutesPg': '3192.0', 'points': 2323, 'id': '9646'}, {'playerName': "Shaquille O'Neal*", 'position': 'C', 'team': 'ORL', 'season': 1995, 'minutesPg': '2923.0', 'points': 2315, 'id': '16893'}, {'playerName': 'LeBron James', 'position': 'SF', 'team': 'CLE', 'season': 2009, 'minutesPg': '3054.0', 'points': 2304, 'id': '9254'}, {'playerName': 'Allen Iverson*', 'position': 'PG', 'team': 'PHI', 'season': 2005, 'minutesPg': '3174.0', 'points': 2302, 'id': '11492'}, {'playerName': 'Kevin Durant', 'position': 'SF', 'team': 'OKC', 'season': 2013, 'minutesPg': '3119.0', 'points': 2280, 'id': '6803'}, {'playerName': 'Allen Iverson*', 'position': 'SG', 'team': 'PHI', 'season': 2003, 'minutesPg': '3485.0', 'points': 2262, 'id': '12615'}, {'playerName': 'LeBron James', 'position': 'SF', 'team': 'CLE', 'season': 2010, 'minutesPg': '2966.0', 'points': 2258, 'id': '8689'}, {'playerName': 'LeBron James', 'position': 'PF', 'team': 'CLE', 'season': 2018, 'minutesPg': '3026.0', 'points': 2251, 'id': '3860'}, {'playerName': 'LeBron James', 'position': 'SF', 'team': 'CLE', 'season': 2008, 'minutesPg': '3027.0', 'points': 2250, 'id': '9838'}, {'playerName': 'Karl Malone*', 'position': 'PF', 'team': 'UTA', 'season': 1997, 'minutesPg': '2998.0', 'points': 2249, 'id': '15781'}, {'playerName': 'David Robinson*', 'position': 'C', 'team': 'SAS', 'season': 1995, 'minutesPg': '3074.0', 'points': 2238, 'id': '16939'}]}
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7130666b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=79d9d755">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7618,15 +7605,18 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Convert JSON to data frame</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Convert JSON to DF</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s1">'playerAdvanced'</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="s1">'playerTotalsAll'</span><span class="p">])</span>
 
-<span class="n">df</span><span class="p">[</span><span class="s1">'winShares'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'winShares'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'minutesPg'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'minutesPg'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'points'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'points'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
-<span class="c1"># Verify types and DataFrame</span>
+<span class="c1"># Sort data by points</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'points'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span>
+
+<span class="n">df_sorted</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7638,35 +7628,93 @@ a.anchor-link {
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>(playerName        object
- team              object
- position          object
- season             int64
- games              int64
- minutesPlayed      int64
- winShares        float64
- box               object
- id                object
- dtype: object,
-          playerName team position  season  games  minutesPlayed  winShares  \
- 0     Steve Francis  HOU       PG    2003     81           3318       11.1   
- 1  Hakeem Olajuwon*  HOU        C    1994     80           3277       14.3   
- 2  Hakeem Olajuwon*  HOU        C    1993     82           3242       15.8   
- 3    Cuttino Mobley  HOU       SG    2004     80           3229        7.6   
- 4     Steve Francis  HOU       PG    2001     80           3194       12.2   
- 
-    box     id  
- 0  3.8  12550  
- 1  6.8  17379  
- 2  7.5  17817  
- 3  1.4  12176  
- 4  5.0  13551  )</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>playerName</th>
+<th>position</th>
+<th>team</th>
+<th>season</th>
+<th>minutesPg</th>
+<th>points</th>
+<th>id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Kobe Bryant*</td>
+<td>SG</td>
+<td>LAL</td>
+<td>2006</td>
+<td>3277.0</td>
+<td>2832</td>
+<td>10755</td>
+</tr>
+<tr>
+<th>1</th>
+<td>James Harden</td>
+<td>PG</td>
+<td>HOU</td>
+<td>2019</td>
+<td>2867.0</td>
+<td>2818</td>
+<td>3118</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Kevin Durant</td>
+<td>SF</td>
+<td>OKC</td>
+<td>2014</td>
+<td>3122.0</td>
+<td>2593</td>
+<td>6229</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Russell Westbrook</td>
+<td>PG</td>
+<td>OKC</td>
+<td>2017</td>
+<td>2802.0</td>
+<td>2558</td>
+<td>4778</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Michael Jordan*</td>
+<td>SG</td>
+<td>CHI</td>
+<td>1993</td>
+<td>3067.0</td>
+<td>2541</td>
+<td>17728</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e0d37020">
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=68d85fac">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7674,9 +7722,28 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'minutesPlayed'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'winShares'</span><span class="p">,</span> <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s1">'playerName'</span><span class="p">,</span> <span class="s1">'season'</span><span class="p">,</span> <span class="s1">'team'</span><span class="p">,</span> <span class="s1">'position'</span><span class="p">,</span> <span class="s1">'id'</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Top 30 Player Minutes Played vs. Win Shares for the Houston Rockets'</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'minutesPLayed'</span><span class="p">:</span> <span class="s1">'Minutes Played'</span><span class="p">,</span> <span class="s1">'winShares'</span><span class="p">:</span> <span class="s1">'Win Shares'</span><span class="p">})</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_sorted</span><span class="p">[</span><span class="s1">'player_season'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sorted</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="s1">'playerName'</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="s1">'season'</span><span class="p">]</span><span class="si">}</span><span class="s2">)"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fee573a7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Catch and remove stupid warning</span>
+<span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s1">'ignore'</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+    
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">df_sorted</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'player_season'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'points'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'position'</span><span class="p">,</span> <span class="n">hover_data</span><span class="o">=</span><span class="p">[</span><span class="s1">'season'</span><span class="p">,</span> <span class="s1">'team'</span><span class="p">,</span> <span class="s1">'minutesPg'</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">'points'</span><span class="p">:</span> <span class="s1">'Total Points'</span><span class="p">,</span> <span class="s1">'playerName'</span><span class="p">:</span> <span class="s1">'Player Name'</span><span class="p">,</span> <span class="s1">'position'</span><span class="p">:</span> <span class="s1">'Position'</span><span class="p">,</span> <span class="s1">'player_season'</span><span class="p">:</span> <span class="s1">'Player (Season)'</span><span class="p">},</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Top 35 NBA Players by Points since the 1992-1993 season.'</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7714,9 +7781,9 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
-<div> <div class="plotly-graph-div" id="756e650d-fa8b-4dde-8a77-72e40a49ad3f" style="height:525px; width:100%;"></div> <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("756e650d-fa8b-4dde-8a77-72e40a49ad3f")) {                    Plotly.newPlot(                        "756e650d-fa8b-4dde-8a77-72e40a49ad3f",                        [{"customdata":[["Steve Francis",2003,"HOU","PG","12550"],["Hakeem Olajuwon*",1994,"HOU","C","17379"],["Hakeem Olajuwon*",1993,"HOU","C","17817"],["Cuttino Mobley",2004,"HOU","SG","12176"],["Steve Francis",2001,"HOU","PG","13551"],["Steve Francis",2004,"HOU","PG","12002"],["Tracy McGrady*",2005,"HOU","SF","11573"],["James Harden",2016,"HOU","SG","5021"],["Jim Jackson",2004,"HOU","SF","12073"],["Cuttino Mobley",2002,"HOU","SG","13204"],["Cuttino Mobley",2003,"HOU","SG","12703"],["Rafer Alston",2007,"HOU","PG","10166"],["Cuttino Mobley",2001,"HOU","SG","13722"],["Shane Battier",2007,"HOU","SF","10195"],["James Harden",2013,"HOU","SG","6863"],["James Harden",2015,"HOU","SG","5645"],["James Harden",2017,"HOU","PG","4431"],["Trevor Ariza",2015,"HOU","SF","5418"],["Aaron Brooks",2010,"HOU","PG","8478"],["Otis Thorpe",1994,"HOU","PF","17474"],["Shane Battier",2008,"HOU","SF","9607"],["James Harden",2019,"HOU","PG","3118"],["Trevor Ariza",2016,"HOU","SF","4840"],["Hakeem Olajuwon*",1995,"HOU","C","16895"],["Hakeem Olajuwon*",1997,"HOU","C","15860"],["P.J. Tucker",2019,"HOU","PF","3499"],["Hakeem Olajuwon*",1996,"HOU","C","16395"],["Chandler Parsons",2014,"HOU","SF","6485"],["James Harden",2014,"HOU","SG","6296"],["Steve Francis",2000,"HOU","PG","14087"]],"hovertemplate":"minutesPlayed=%{x}\u003cbr\u003eWin Shares=%{y}\u003cbr\u003eplayerName=%{customdata[0]}\u003cbr\u003eseason=%{customdata[1]}\u003cbr\u003eteam=%{customdata[2]}\u003cbr\u003eposition=%{customdata[3]}\u003cbr\u003eid=%{customdata[4]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":[3318,3277,3242,3229,3194,3194,3182,3125,3119,3116,3044,3040,3002,2988,2985,2981,2947,2930,2919,2909,2907,2867,2859,2853,2852,2802,2797,2783,2777,2776],"xaxis":"x","y":[11.1,14.3,15.8,7.6,12.2,7.1,12.0,13.3,6.6,5.7,6.9,6.6,8.2,9.0,12.8,16.4,15.0,6.6,5.5,9.8,8.2,15.2,5.4,10.7,9.1,5.0,9.7,7.6,12.8,6.4],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"minutesPlayed"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Win Shares"}},"legend":{"tracegroupgap":0},"title":{"text":"Top 30 Player Minutes Played vs. Win Shares for the Houston Rockets"}},                        {"responsive": true}                    ).then(function(){
+<div> <div class="plotly-graph-div" id="7c310f3d-6185-4411-a13e-d71cfa50b727" style="height:525px; width:100%;"></div> <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7c310f3d-6185-4411-a13e-d71cfa50b727")) {                    Plotly.newPlot(                        "7c310f3d-6185-4411-a13e-d71cfa50b727",                        [{"alignmentgroup":"True","customdata":[[2006,"LAL",3277.0],[1993,"CHI",3067.0],[1996,"CHI",3090.0],[2003,"LAL",3401.0],[1997,"CHI",3106.0],[2007,"LAL",3140.0],[2003,"ORL",2954.0],[2009,"MIA",3048.0],[2001,"DET",3215.0],[2016,"HOU",3125.0],[1998,"CHI",3181.0],[2020,"HOU",2483.0],[2008,"LAL",3192.0],[2003,"PHI",3485.0]],"hovertemplate":"Position=SG\u003cbr\u003eTotal Points=%{x}\u003cbr\u003ePlayer (Season)=%{y}\u003cbr\u003eseason=%{customdata[0]}\u003cbr\u003eteam=%{customdata[1]}\u003cbr\u003eminutesPg=%{customdata[2]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"SG","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"SG","offsetgroup":"SG","orientation":"h","showlegend":true,"textposition":"auto","x":[2832,2541,2491,2461,2431,2430,2407,2386,2380,2376,2357,2335,2323,2262],"xaxis":"x","y":["Kobe Bryant* (2006)","Michael Jordan* (1993)","Michael Jordan* (1996)","Kobe Bryant* (2003)","Michael Jordan* (1997)","Kobe Bryant* (2007)","Tracy McGrady* (2003)","Dwyane Wade* (2009)","Jerry Stackhouse (2001)","James Harden (2016)","Michael Jordan* (1998)","James Harden (2020)","Kobe Bryant* (2008)","Allen Iverson* (2003)"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","customdata":[[2019,"HOU",2867.0],[2017,"OKC",2802.0],[2006,"PHI",3103.0],[2016,"GSW",2700.0],[2017,"HOU",2947.0],[2006,"WAS",3384.0],[2005,"PHI",3174.0]],"hovertemplate":"Position=PG\u003cbr\u003eTotal Points=%{x}\u003cbr\u003ePlayer (Season)=%{y}\u003cbr\u003eseason=%{customdata[0]}\u003cbr\u003eteam=%{customdata[1]}\u003cbr\u003eminutesPg=%{customdata[2]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"PG","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"PG","offsetgroup":"PG","orientation":"h","showlegend":true,"textposition":"auto","x":[2818,2558,2377,2375,2356,2346,2302],"xaxis":"x","y":["James Harden (2019)","Russell Westbrook (2017)","Allen Iverson* (2006)","Stephen Curry (2016)","James Harden (2017)","Gilbert Arenas (2006)","Allen Iverson* (2005)"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","customdata":[[2014,"OKC",3122.0],[2006,"CLE",3361.0],[2010,"OKC",3239.0],[2009,"CLE",3054.0],[2013,"OKC",3119.0],[2010,"CLE",2966.0],[2008,"CLE",3027.0]],"hovertemplate":"Position=SF\u003cbr\u003eTotal Points=%{x}\u003cbr\u003ePlayer (Season)=%{y}\u003cbr\u003eseason=%{customdata[0]}\u003cbr\u003eteam=%{customdata[1]}\u003cbr\u003eminutesPg=%{customdata[2]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"SF","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"SF","offsetgroup":"SF","orientation":"h","showlegend":true,"textposition":"auto","x":[2593,2478,2472,2304,2280,2258,2250],"xaxis":"x","y":["Kevin Durant (2014)","LeBron James (2006)","Kevin Durant (2010)","LeBron James (2009)","Kevin Durant (2013)","LeBron James (2010)","LeBron James (2008)"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","customdata":[[1994,"SAS",3241.0],[1994,"ORL",3224.0],[2000,"LAL",3163.0],[1995,"ORL",2923.0],[1995,"SAS",3074.0]],"hovertemplate":"Position=C\u003cbr\u003eTotal Points=%{x}\u003cbr\u003ePlayer (Season)=%{y}\u003cbr\u003eseason=%{customdata[0]}\u003cbr\u003eteam=%{customdata[1]}\u003cbr\u003eminutesPg=%{customdata[2]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"C","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"C","offsetgroup":"C","orientation":"h","showlegend":true,"textposition":"auto","x":[2383,2377,2344,2315,2238],"xaxis":"x","y":["David Robinson* (1994)","Shaquille O'Neal* (1994)","Shaquille O'Neal* (2000)","Shaquille O'Neal* (1995)","David Robinson* (1995)"],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","customdata":[[2018,"CLE",3026.0],[1997,"UTA",2998.0]],"hovertemplate":"Position=PF\u003cbr\u003eTotal Points=%{x}\u003cbr\u003ePlayer (Season)=%{y}\u003cbr\u003eseason=%{customdata[0]}\u003cbr\u003eteam=%{customdata[1]}\u003cbr\u003eminutesPg=%{customdata[2]}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"PF","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"PF","offsetgroup":"PF","orientation":"h","showlegend":true,"textposition":"auto","x":[2251,2249],"xaxis":"x","y":["LeBron James (2018)","Karl Malone* (1997)"],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Total Points"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Player (Season)"}},"legend":{"title":{"text":"Position"},"tracegroupgap":0},"title":{"text":"Top 35 NBA Players by Points since the 1992-1993 season."},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('756e650d-fa8b-4dde-8a77-72e40a49ad3f');
+var gd = document.getElementById('7c310f3d-6185-4411-a13e-d71cfa50b727');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
