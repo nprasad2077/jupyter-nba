@@ -3,8 +3,9 @@ from gql.transport.requests import RequestsHTTPTransport
 
 
 _transport = RequestsHTTPTransport(
-    url='http://127.0.0.1:8000/graphql/',
+    url='http://209.38.172.107/graphql/',
     use_json=True,
+    headers={'Accept': 'application/json'}
 )
 
 client = Client(
