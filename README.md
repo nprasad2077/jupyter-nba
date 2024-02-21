@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is dedicated to analyzing NBA data spanning several seasons to derive insightful visualizations and statistics. It utilizes Jupyter notebooks for data exploration and analysis, with a focus on cumulative player statistics and team-specific data. The project aims to leverage Python's powerful data manipulation and visualization libraries to uncover trends and patterns in NBA gameplay.
+This project is dedicated to analyzing NBA data spanning several seasons to derive insightful visualizations and statistics. It utilizes Jupyter notebooks for data exploration and analysis, with a focus on cumulative player statistics and team-specific data. The project aims to leverage Python's powerful data manipulation and visualization libraries to uncover trends and patterns in NBA gameplay. :D
 
 ## Getting Started
 
