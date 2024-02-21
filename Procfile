@@ -1,1 +1,1 @@
-web: voila --port=$PORT --no-browser --enable_nbextensions=True ./notebooks/
+web: voila --port=$PORT --no-browser ./notebooks/ --VoilaConfiguration.file_allowlist="['.*\..*']" --VoilaConfiguration.template=lab
