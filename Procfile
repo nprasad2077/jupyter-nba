@@ -1,1 +1,1 @@
-web: voila --port=$PORT --no-browser ./notebooks/ --VoilaConfiguration.file_allowlist="['.*\..*']" --VoilaConfiguration.template=lab
+web: voila --port=$PORT --no-browser ./notebooks/total_points_top_35.ipynb 
