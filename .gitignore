@@ -168,14 +168,14 @@ cython_debug/
 /data
 .data
 
-./output
-/output
-/output/
+# ./output
+# /output
+# /output/
 
-./dash/
-/dash/
-/dash
+# ./dash/
+# /dash/
+# /dash
 
-./scripts
-/scripts/
-/scripts
+# ./scripts
+# /scripts/
+# /scripts
