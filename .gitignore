@@ -129,6 +129,7 @@ env.bak/
 venv.bak/
 ./venv
 /venv
+/venv/
 
 # Spyder project settings
 .spyderproject
@@ -162,11 +163,11 @@ cython_debug/
 #.idea/
 
 # Data
-./data/
-/data/
-./data
-/data
-.data
+# ./data/
+# /data/
+# ./data
+# /data
+# .data
 
 # ./output
 # /output
@@ -179,3 +180,7 @@ cython_debug/
 # ./scripts
 # /scripts/
 # /scripts
+
+/examples
+./examples
+/examples/
